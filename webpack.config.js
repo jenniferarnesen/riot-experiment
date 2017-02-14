@@ -3,13 +3,15 @@ const webpack = require('webpack');
 
 module.exports = {
   cache: true,
-  entry: './src/index.js',
+
+  entry: './src/app.js',
+
   output: {
     path: __dirname + '/public/dist/',
     publicPath: 'dist',
     filename: 'bundle.js'
   },
-  devtool: 'source-map',
+
   module: {
     loaders: [
       {
@@ -29,12 +31,10 @@ module.exports = {
       }
     ]
   },
+
+  devtool: 'source-map',
+
   plugins: [
-    new ExtractTextPlugin('styles.css', {allChunks: true}),
-    new webpack.DefinePlugin({
-      'process.env': {
-        ENV:  JSON.stringify(process.env.ENV || 'development')
-      }
-    })
+    new ExtractTextPlugin('styles.css', {allChunks: true})
   ]
 };
