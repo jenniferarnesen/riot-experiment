@@ -1,10 +1,9 @@
 'use strict';
 
-import "../node_modules/@nrk/bjartmar/dist/nrk-style.css";
 import "./assets/base.css";
 
 import riot from 'riot';
 
-import './components/app';
+import './components/app.tag';
 
-riot.mount('*', {title: 'Tweet generator'});
+riot.mount('*', {title: 'Trumpism generator'});

@@ -15,10 +15,14 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.js$|\.tag$/,
         include: /src/,
         loader: 'babel-loader',
         query:  {presets: ['es2015']}
+      },
+      {
+        test: /\.tag$/,
+        loader: 'tag'
       },
       {
         test: /\.css$/,
